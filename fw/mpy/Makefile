@@ -1,0 +1,20 @@
+# EPM11 FPGA bus, second version - MicroPython native module
+#
+# Builds fpga.mpy for the RP2350 (Cortex-M33), which MicroPython's rp2 port
+# targets as armv7m - see ports/rp2/CMakeLists.txt, the rp2350-arm-s branch.
+#
+
+# Location of top-level MicroPython directory
+MPY_DIR = ../../../micropython
+
+# Name of module, this is what `import fpga` will find
+MOD = fpga
+
+# Source files (.c or .py)
+SRC = fpga.c bus.c
+
+# Architecture to build for (x86, x64, armv7m, xtensa, xtensawin, rv32imc, rv64imc)
+ARCH = armv7m
+
+# Include to get the rules for compiling and linking the module
+include $(MPY_DIR)/py/dynruntime.mk

@@ -1,0 +1,3 @@
+*.o
+*.mpy
+build-armv7m

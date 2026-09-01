@@ -9,6 +9,8 @@ Example project for the MCU component of the [EPM11](https://brisbanesilicon.com
 
 *   [Overview](#overview)
 *   [Getting Started](#getting-started)
+*   [Build](#build)
+*   [Upload](#upload)
 
 
 ## Overview
@@ -75,3 +77,37 @@ If you wish to build the custom Micropython layer:
 2. An installation of version 13.3.rel1 of the Arm cross compiler toolchain. See [here](https://github.com/RT-Thread/toolchains-ci/releases).
 3. An installation of Python3.
 4. An installation of the Python library pyelftools (`pip install 'pyelftools>=0.25'`)
+
+## Build
+
+After fulfilling all of the prerequisites you are ready to build the EPM11 MCU comms layer! Simply perform the following:
+
+### Linux
+
+```bash
+cd <this repository directory>/fw/mpy
+PATH=/<arm gnu toolchain installation directory>/arm-gnu-toolchain-13.3.rel1-x86_64-arm-none-eabi/bin/:$PATH make
+```
+Substituting `<arm gnu toolchain installation directory>` for the actual install directory.
+
+### Windows
+
+Coming soon!
+
+## Upload
+
+To upload either the pre-built or manually built `fpga.mpy` comms layer, perform either of the following. After uploading the module, you should be able to successfully `import fpga` via the MCU REPL (or program).
+
+### Thonny
+
+1. Click 'View' - 'Files'.
+2. In the 'This computer' file tree (top left) navigate to the directory that hosts 'fpga.mpy'.
+3. Right-click 'fpga.mpy' and select 'Upload to /'
+
+### mpremote
+
+```bash
+cd <directory that hosts fpga.mpy>
+mpremote fs cp fpga.mpy :fpga.mpy
+```
+

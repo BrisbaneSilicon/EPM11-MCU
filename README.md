@@ -11,7 +11,10 @@ Example project for the MCU component of the [EPM11](https://brisbanesilicon.com
 *   [Getting Started](#getting-started)
 *   [Build](#build)
 *   [Upload](#upload)
-
+*   [Authors](#authors)
+*   [Appendix](#appendix)
+*   [Support](#support)
+<br>
 
 ## Overview
 
@@ -78,6 +81,8 @@ If you wish to build the custom Micropython layer:
 3. An installation of Python3.
 4. An installation of the Python library pyelftools (`pip install 'pyelftools>=0.25'`)
 
+<br>
+
 ## Build
 
 After fulfilling all of the prerequisites you are ready to build the EPM11 MCU comms layer! Simply perform the following:
@@ -93,6 +98,8 @@ Substituting `<arm gnu toolchain installation directory>` for the actual install
 ### Windows
 
 Coming soon!
+
+<br>
 
 ## Upload
 
@@ -111,3 +118,22 @@ cd <directory that hosts fpga.mpy>
 mpremote fs cp fpga.mpy :fpga.mpy
 ```
 
+<br>
+
+## Authors
+
+- [@brisbanesilicon](https://github.com/BrisbaneSilicon)
+- [@CheekiestMonkey117](https://github.com/CheekiestMonkey117)
+
+<br>
+
+## Appendix
+
+For developing with the project, we recommend [Sublime Text](https://www.sublimetext.com/), with the VHDL and/or Systemverilog syntax highlighing enabled.<br><br>
+If you like this project, follow us on X [here](https://x.com/brisbanesilicon)!
+
+<br>
+
+## Support
+
+For support, email support@brisbanesilicon.com.au.

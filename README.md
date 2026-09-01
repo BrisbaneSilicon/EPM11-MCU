@@ -9,6 +9,7 @@ Example project for the MCU component of the [EPM11](https://brisbanesilicon.com
 
 *   [Overview](#overview)
 *   [Getting Started](#getting-started)
+*   [Board Setup](#board-setup)
 *   [Build](#build)
 *   [Upload](#upload)
 *   [Authors](#authors)
@@ -80,6 +81,21 @@ If you wish to build the custom Micropython layer:
 2. An installation of version 13.3.rel1 of the Arm cross compiler toolchain. See [here](https://github.com/RT-Thread/toolchains-ci/releases).
 3. An installation of Python3.
 4. An installation of the Python library pyelftools (`pip install 'pyelftools>=0.25'`)
+
+<br>
+
+## Board Setup
+
+If you recently purchased a board you might need to flash the Micropython image for the first time, or if you wish to upload a customized Micropython image, follow the steps below.
+
+1. Unplug the EPM11 from your PC.
+2. Short TP2 to GND. For reference, TP2 and the closest GND pad are circled in the diagram below. A small pair of tweezers or a single-strand wire are suggested to be utilized for this step.
+3. Plug the EPM11 into your PC, keeping the TP2 - GND short in place.
+4. Once the EPM11 is plugged into your PC, remove the TP2 - GND short.
+5. A new folder ‘RP2350’ should now be mounted by your OS. Simply drag and drop the new MicroPython image (i.e. the currently supported image is located in the 'bin' directory of this repository) to that folder.
+6. Once the new image has been uploaded, the ‘RP2350’ folder will unmount and the image will boot.
+
+![EPM11 TP2 GND](img/setup_micropython.png)
 
 <br>
 

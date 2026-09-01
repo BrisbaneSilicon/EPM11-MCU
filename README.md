@@ -49,3 +49,29 @@ input               cpu_ready
 ```
 
 <br>
+
+## Getting Started
+
+Fulfill the below prerequisites.
+
+### Prerequisites
+
+1. A PC running an x64 compatible, Debian-based flavour of Linux or Windows 11.
+   - Other flavours of Linux may work but aren't officially supported.
+   - We recommend [Ubuntu](https://ubuntu.com/).
+2. An installation of [GIT](https://git-scm.com/).
+3. Either an installation of [Thonny](https://thonny.org/) or a command-line based tool for interacting with the RP2350 MCU, i.e. [mpremote](https://pypi.org/project/mpremote/).
+4. A copy of this repository.
+   - Launch a terminal program.
+   - Navigate to the directory in which you wish to host the EPM11 repository.
+   - `git clone https://github.com/BrisbaneSilicon/EPM11-MCU.git`
+  
+If you wish to build the custom Micropython layer:
+
+1. A copy of Micropython (located in the same root directory as this repository)
+  - Launch a terminal program.
+  - Navigate to the same directory in which you host the EPM11 repository.
+  - `git clone https://github.com/BrisbaneSilicon/EPM11-MCU.git`
+2. An installation of version 13.3.rel1 of the Arm cross compiler toolchain. See [here](https://github.com/RT-Thread/toolchains-ci/releases).
+3. An installation of Python3.
+4. An installation of the Python library pyelftools (`pip install 'pyelftools>=0.25'`)

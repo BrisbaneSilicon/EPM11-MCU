@@ -12,6 +12,8 @@ Example project for the MCU component of the [EPM11](https://brisbanesilicon.com
 *   [Board Setup](#board-setup)
 *   [Build](#build)
 *   [Upload](#upload)
+*   [Examples](#examples)
+*   [Pinout File](#pinout-file)
 *   [Authors](#authors)
 *   [Appendix](#appendix)
 *   [Support](#support)
@@ -133,6 +135,61 @@ To upload either the pre-built or manually built `fpga.mpy` comms layer, perform
 cd <directory that hosts fpga.mpy>
 mpremote fs cp fpga.mpy :fpga.mpy
 ```
+
+<br>
+
+## Examples
+
+### Bus Test Simple
+
+The [simple bus test](https://github.com/BrisbaneSilicon/EPM11-MCU/blob/master/script/examples/bus_test_simple.py) script demonstrates bi-directional communication between the RP2350 MCU and FPGA. Simply upload it (in the same manner you uploaded the fpga.mpy module), and flash the FPGA with firmware that has been built with the ['-t' switch](https://github.com/BrisbaneSilicon/EPM11-FPGA/blob/master/README.md#build), and then run the example. It performs various register read/writes to verify the FPGA bus functionality. The output should be similar to the following:
+
+```
+	------- Begin: EPM11 FPGA Bus Test -------
+
+|    Address   |     Write    |      Read    | Result |
+|--------------|--------------|--------------|--------|
+|  0x00000000  |  0xFFFFFFFF  |  0xFFFFFFFF  |  PASS  |
+|  0x00000000  |  0xAAAAAAAA  |  0xAAAAAAAA  |  PASS  |
+|  0x00000000  |  0x55555555  |  0x55555555  |  PASS  |
+|  0x00000000  |  0x0000FFFF  |  0x0000FFFF  |  PASS  |
+|  0x00000000  |  0xFFFF0000  |  0xFFFF0000  |  PASS  |
+|  0x00000000  |  0x8BADF00D  |  0x8BADF00D  |  PASS  |
+|  0x00000000  |  0x01234567  |  0x01234567  |  PASS  |
+|  0x00000000  |  0x00000000  |  0x00000000  |  PASS  |
+|  0x000000FC  |  0xFFFFFFFF  |  0xFFFFFFFF  |  PASS  |
+|  0x000000FC  |  0xAAAAAAAA  |  0xAAAAAAAA  |  PASS  |
+|  0x000000FC  |  0x55555555  |  0x55555555  |  PASS  |
+|  0x000000FC  |  0x0000FFFF  |  0x0000FFFF  |  PASS  |
+|  0x000000FC  |  0xFFFF0000  |  0xFFFF0000  |  PASS  |
+|  0x000000FC  |  0x8BADF00D  |  0x8BADF00D  |  PASS  |
+|  0x000000FC  |  0x01234567  |  0x01234567  |  PASS  |
+|  0x000000FC  |  0x00000000  |  0x00000000  |  PASS  |
+|  0x5A5AA5A4  |  0xFFFFFFFF  |  0xFFFFFFFF  |  PASS  |
+|  0x5A5AA5A4  |  0xAAAAAAAA  |  0xAAAAAAAA  |  PASS  |
+|  0x5A5AA5A4  |  0x55555555  |  0x55555555  |  PASS  |
+|  0x5A5AA5A4  |  0x0000FFFF  |  0x0000FFFF  |  PASS  |
+|  0x5A5AA5A4  |  0xFFFF0000  |  0xFFFF0000  |  PASS  |
+|  0x5A5AA5A4  |  0x8BADF00D  |  0x8BADF00D  |  PASS  |
+|  0x5A5AA5A4  |  0x01234567  |  0x01234567  |  PASS  |
+|  0x5A5AA5A4  |  0x00000000  |  0x00000000  |  PASS  |
+|  0xFFFFFFFC  |  0xFFFFFFFF  |  0xFFFFFFFF  |  PASS  |
+|  0xFFFFFFFC  |  0xAAAAAAAA  |  0xAAAAAAAA  |  PASS  |
+|  0xFFFFFFFC  |  0x55555555  |  0x55555555  |  PASS  |
+|  0xFFFFFFFC  |  0x0000FFFF  |  0x0000FFFF  |  PASS  |
+|  0xFFFFFFFC  |  0xFFFF0000  |  0xFFFF0000  |  PASS  |
+|  0xFFFFFFFC  |  0x8BADF00D  |  0x8BADF00D  |  PASS  |
+|  0xFFFFFFFC  |  0x01234567  |  0x01234567  |  PASS  |
+|  0xFFFFFFFC  |  0x00000000  |  0x00000000  |  PASS  |
+
+Summary: 0 of 32 tests failed
+```
+
+<br>
+
+## Pinout File
+
+The [Pinout File](https://github.com/BrisbaneSilicon/EPM11-MCU/blob/master/script/pinout.py) is a useful Python module that can be imported into your custom scripts as it contains the RP2350 MCU I/O pin mapping (header J5 in the [schematic](https://brisbanesilicon.com.au/docs/EPM11_Schematic.pdf)) as well as the raw mapping of the bus from the MCU to the FPGA.
 
 <br>
 

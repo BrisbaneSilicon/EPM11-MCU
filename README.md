@@ -142,7 +142,7 @@ mpremote fs cp fpga.mpy :fpga.mpy
 
 ### Bus Test Simple
 
-The [simple bus test](https://github.com/BrisbaneSilicon/EPM11-MCU/blob/master/script/examples/bus_test_simple.py) script demonstrates bi-directional communication between the RP2350 MCU and FPGA. Simply upload it (in the same manner you uploaded the fpga.mpy module), and flash the FPGA with firmware that has been built with the ['-t' switch](https://github.com/BrisbaneSilicon/EPM11-FPGA/blob/master/README.md#build), and then run the example. It performs various register read/writes to verify the FPGA bus functionality. The output should be similar to the following:
+The [simple bus test](https://github.com/BrisbaneSilicon/EPM11-MCU/blob/master/script/examples/cpu_bus_test.py) script demonstrates bi-directional communication between the RP2350 MCU and FPGA. Simply upload it (in the same manner you uploaded the fpga.mpy module), and flash the FPGA with firmware that has been built with the ['-t' switch](https://github.com/BrisbaneSilicon/EPM11-FPGA/blob/master/README.md#build), and then run the example. It performs various register read/writes to verify the FPGA bus functionality. The output should be similar to the following:
 
 ```
 	------- Begin: EPM11 FPGA Bus Test -------

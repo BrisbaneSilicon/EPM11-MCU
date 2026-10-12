@@ -88,7 +88,9 @@ If you wish to build the custom Micropython layer:
 
 ## Board Setup
 
-If you recently purchased a board you might need to flash the Micropython image for the first time, or if you wish to upload a customized Micropython image, follow the steps below.
+Boards ship with a Pico2 Micropython image and the example scripts and FPGA firmware installed. To test the board, simply connect Thonny and run the 'Bus Test Simple' script as per [Examples](#examples). 
+
+Note that if you wish to upload a customized Micropython image, follow the steps below.
 
 1. Unplug the EPM11 from your PC.
 2. Short TP2 to GND. For reference, TP2 and the closest GND pad are circled in the diagram below. A small pair of tweezers or a single-strand wire are suggested to be utilized for this step.

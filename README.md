@@ -79,7 +79,7 @@ If you wish to build the custom Micropython layer:
 1. A copy of Micropython (located in the same root directory as this repository)
   - Launch a terminal program.
   - Navigate to the same directory in which you host the EPM11 repository.
-  - `git clone https://github.com/BrisbaneSilicon/EPM11-MCU.git`
+  - `git clone https://github.com/micropython/micropython.git`
 2. An installation of version 13.3.rel1 of the Arm cross compiler toolchain. See [here](https://github.com/RT-Thread/toolchains-ci/releases).
 3. An installation of Python3.
 4. An installation of the Python library pyelftools (`pip install 'pyelftools>=0.25'`)
